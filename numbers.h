@@ -33,22 +33,22 @@ template<typename T>
     size=p.size;
     num= new T[size];
     for(finish=0;finish<p.finish; finish++)
-        num[finish]=p.num[finish];
+    num[finish]=p.num[finish];
 }
 
 template<typename T>
     numbers<T>::numbers()
-    {
-        finish=0;
-        size =10;
-        num= new T[size];
-    }
+{
+    finish=0;
+    size =10;
+    num= new T[size];
+}
 
 template<typename T>
     numbers<T>::numbers( int y)
-{ finish=0;
-  size =y;
-  num= new T[size];
+{   finish=0;
+    size =y;
+    num= new T[size];
 }
 
 template<typename T>
@@ -73,7 +73,7 @@ T numbers<T>::dequeue()
     T Value = num[0];
     --finish;
     for (int a=0;a<finish; a++)
-        num[a]=num[a+1];
+    num[a]=num[a+1];
     return Value;
 }
 
@@ -93,43 +93,30 @@ T numbers<T>::getTop()
 }
 template<typename T>
 int numbers<T>::SIZE()
-
 {
-
     return finish;
 }
 template<typename T>
 bool numbers<T>::isEmpty()
 {
     if (finish==0)
-        {
-        return false;}
-
-        else
-    {
-     return true;}
-
+    {return false;}
+    else
+    {return true;}
 }
 
 template<typename T>
-  numbers<T>::~numbers()
-    {
-        delete [] num;
-    }
-
-    template<typename T>
-    void numbers<T>::print( )
+numbers<T>::~numbers()
 {
+    delete [] num;
+}
 
-
-        cout<<endl;
-
-        for (int i = 0; i <finish; ++i)
-           {
-
-           cout << num[i] << " ";}
-
-
+template<typename T>
+void numbers<T>::print( )
+{
+  cout<<endl;
+  for (int i = 0; i <finish; ++i)
+   {cout << num[i] << " ";}
 }
 
 #endif // NUMBERS_H_INCLUDED
